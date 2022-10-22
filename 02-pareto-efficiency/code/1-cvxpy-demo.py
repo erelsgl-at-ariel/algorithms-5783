@@ -32,3 +32,12 @@ prob.solve()  # Returns the optimal value.
 print("\nstatus:", prob.status)
 print("optimal value", prob.value)
 print("optimal var", x.value, y.value)
+
+
+# Form and solve an unbounded problem.
+prob = cvxpy.Problem(cvxpy.Maximize(x+y), [])
+prob.solve()  # Returns the optimal value.
+
+print("\nstatus:", prob.status)
+print("optimal value", prob.value)
+print("optimal var", x.value, y.value)
