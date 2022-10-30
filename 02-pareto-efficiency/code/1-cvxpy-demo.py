@@ -2,6 +2,11 @@
 
 """
 A demo of cvxpy - the convex-optimization package of python.
+
+EXAMPLE PROBLEM:
+
+Minimize     (x-y)^2 
+subject to   x+y==1
 """
 
 import cvxpy
@@ -10,7 +15,7 @@ import cvxpy
 x = cvxpy.Variable()
 y = cvxpy.Variable()
 
-# Build two constraints.
+# Build the constraints.
 constraints = [x + y == 1]
 
 # Build an objective function.
@@ -26,7 +31,7 @@ print("optimal var", x.value, y.value)
 
 
 # Form and solve an infeasible problem.
-prob = cvxpy.Problem(obj, [x + y == 1, x+y >= 2])
+prob = cvxpy.Problem(obj, [x + y == 1, x + y >= 2])
 prob.solve()  # Returns the optimal value.
 
 print("\nstatus:", prob.status)
