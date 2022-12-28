@@ -35,10 +35,10 @@ print("UTILS : {}, {}, {}, {}, {}".format(*utility_values))
 utility_product = functools.reduce(lambda a,b: a*b, utility_values)
 print("PRODUCT: {}".format(utility_product))
 i=0
-print("Citizen {} should donate  {} to b and {} to d".format(i,
-    # a.value * donations[i] / utilities[i].value,
+print("Citizen {} should donate  {} to a and {} to b".format(i,
+    a.value * donations[i] / utilities[i].value,
     b.value * donations[i] / utilities[i].value,
-    d.value * donations[i] / utilities[i].value
+    # d.value * donations[i] / utilities[i].value
 ))
 i+=1
 print("Citizen {} should donate {} to a and {} to c".format(i,
